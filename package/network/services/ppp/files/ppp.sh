@@ -147,6 +147,7 @@ ppp_generic_setup() {
 	[ "$norelease" = "1" ] || norelease=""
 
 	proto_run_command "$config" /usr/sbin/pppd \
+		syncppp 2 \
 		nodetach ipparam "$config" \
 		ifname "$pppname" \
 		${localip:+$localip:} \
